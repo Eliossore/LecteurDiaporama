@@ -1,21 +1,21 @@
-#ifndef LECTEURVUE_H
-#define LECTEURVUE_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class lecteurvue; }
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class lecteurvue : public QMainWindow
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    lecteurvue(QWidget *parent = nullptr);
-    ~lecteurvue();
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
 private:
-    Ui::lecteurvue *ui;
+    Ui::MainWindow *ui;
 };
-#endif // LECTEURVUE_H
+#endif // MAINWINDOW_H

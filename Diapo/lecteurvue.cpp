@@ -1,14 +1,14 @@
-#include "lecteurvue.h"
-#include "ui_lecteurvue.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
-lecteurvue::lecteurvue(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::lecteurvue)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
 
-lecteurvue::~lecteurvue()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
