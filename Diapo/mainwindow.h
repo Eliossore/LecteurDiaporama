@@ -15,6 +15,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void quitter();
+    void changer();
+    void enlever();
+    void vitesse();
+    void apropos();
+    void precedent();
+    void lancer();
+    void arreter();
+
+
 private:
     Ui::MainWindow *ui;
 };

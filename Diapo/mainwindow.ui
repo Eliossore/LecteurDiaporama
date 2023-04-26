@@ -24,7 +24,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0">
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="fTitre">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -55,7 +55,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="lTitre">
            <property name="text">
             <string>Titre du diaporama</string>
            </property>
@@ -80,7 +80,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="lImage">
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -101,7 +101,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QFrame" name="frame_3">
+       <widget class="QFrame" name="fInfo">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -125,7 +125,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0,0,0">
          <item>
-          <widget class="QLabel" name="label_7">
+          <widget class="QLabel" name="lMode">
            <property name="text">
             <string>Mode de fonctionnement</string>
            </property>
@@ -145,21 +145,21 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="lIntitule">
            <property name="text">
             <string>Intitulé de l'image</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_5">
+          <widget class="QLabel" name="lCategorie">
            <property name="text">
             <string>Catégorie de l'image</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_6">
+          <widget class="QLabel" name="lRang">
            <property name="text">
             <string>Rang de l'image</string>
            </property>
@@ -169,7 +169,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_2">
+       <widget class="QFrame" name="fBoutons">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -187,7 +187,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="bPrecedent">
            <property name="font">
             <font>
              <family>Arial</family>
@@ -200,7 +200,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="bSuivant">
            <property name="font">
             <font>
              <family>Arial</family>
@@ -226,14 +226,14 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="bLancer">
            <property name="text">
             <string>Lancer</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="bArreter">
            <property name="text">
             <string>Arrêter</string>
            </property>
