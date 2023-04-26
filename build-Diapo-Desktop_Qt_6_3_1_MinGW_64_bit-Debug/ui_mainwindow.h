@@ -37,27 +37,27 @@ public:
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
-    QFrame *frame;
+    QFrame *fTitre;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QLabel *label;
+    QLabel *lTitre;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_5;
-    QLabel *label_4;
-    QFrame *frame_3;
+    QLabel *lImage;
+    QFrame *fInfo;
     QHBoxLayout *horizontalLayout_7;
-    QLabel *label_7;
+    QLabel *lMode;
     QSpacerItem *horizontalSpacer_4;
-    QLabel *label_3;
-    QLabel *label_5;
-    QLabel *label_6;
-    QFrame *frame_2;
+    QLabel *lIntitule;
+    QLabel *lCategorie;
+    QLabel *lRang;
+    QFrame *fBoutons;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *bPrecedent;
+    QPushButton *bSuivant;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *bLancer;
+    QPushButton *bArreter;
     QMenuBar *menubar;
     QMenu *menue;
     QMenu *menuf;
@@ -87,118 +87,118 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        frame = new QFrame(centralwidget);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMaximumSize(QSize(16777215, 50));
-        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        horizontalLayout_4 = new QHBoxLayout(frame);
+        fTitre = new QFrame(centralwidget);
+        fTitre->setObjectName(QString::fromUtf8("fTitre"));
+        fTitre->setMaximumSize(QSize(16777215, 50));
+        fTitre->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
+        fTitre->setFrameShape(QFrame::StyledPanel);
+        fTitre->setFrameShadow(QFrame::Raised);
+        horizontalLayout_4 = new QHBoxLayout(fTitre);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
-        label = new QLabel(frame);
-        label->setObjectName(QString::fromUtf8("label"));
+        lTitre = new QLabel(fTitre);
+        lTitre->setObjectName(QString::fromUtf8("lTitre"));
 
-        horizontalLayout_4->addWidget(label);
+        horizontalLayout_4->addWidget(lTitre);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_4->addItem(horizontalSpacer_3);
 
 
-        verticalLayout->addWidget(frame);
+        verticalLayout->addWidget(fTitre);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setMinimumSize(QSize(300, 0));
-        label_4->setFrameShape(QFrame::NoFrame);
-        label_4->setAlignment(Qt::AlignCenter);
+        lImage = new QLabel(centralwidget);
+        lImage->setObjectName(QString::fromUtf8("lImage"));
+        lImage->setMinimumSize(QSize(300, 0));
+        lImage->setFrameShape(QFrame::NoFrame);
+        lImage->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_5->addWidget(label_4);
+        horizontalLayout_5->addWidget(lImage);
 
 
         verticalLayout->addLayout(horizontalLayout_5);
 
-        frame_3 = new QFrame(centralwidget);
-        frame_3->setObjectName(QString::fromUtf8("frame_3"));
-        frame_3->setMinimumSize(QSize(0, 35));
-        frame_3->setMaximumSize(QSize(16777215, 30));
-        frame_3->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
-        frame_3->setFrameShape(QFrame::StyledPanel);
-        frame_3->setFrameShadow(QFrame::Raised);
-        horizontalLayout_7 = new QHBoxLayout(frame_3);
+        fInfo = new QFrame(centralwidget);
+        fInfo->setObjectName(QString::fromUtf8("fInfo"));
+        fInfo->setMinimumSize(QSize(0, 35));
+        fInfo->setMaximumSize(QSize(16777215, 30));
+        fInfo->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
+        fInfo->setFrameShape(QFrame::StyledPanel);
+        fInfo->setFrameShadow(QFrame::Raised);
+        horizontalLayout_7 = new QHBoxLayout(fInfo);
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
-        label_7 = new QLabel(frame_3);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        lMode = new QLabel(fInfo);
+        lMode->setObjectName(QString::fromUtf8("lMode"));
 
-        horizontalLayout_7->addWidget(label_7);
+        horizontalLayout_7->addWidget(lMode);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_7->addItem(horizontalSpacer_4);
 
-        label_3 = new QLabel(frame_3);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        lIntitule = new QLabel(fInfo);
+        lIntitule->setObjectName(QString::fromUtf8("lIntitule"));
 
-        horizontalLayout_7->addWidget(label_3);
+        horizontalLayout_7->addWidget(lIntitule);
 
-        label_5 = new QLabel(frame_3);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        lCategorie = new QLabel(fInfo);
+        lCategorie->setObjectName(QString::fromUtf8("lCategorie"));
 
-        horizontalLayout_7->addWidget(label_5);
+        horizontalLayout_7->addWidget(lCategorie);
 
-        label_6 = new QLabel(frame_3);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        lRang = new QLabel(fInfo);
+        lRang->setObjectName(QString::fromUtf8("lRang"));
 
-        horizontalLayout_7->addWidget(label_6);
+        horizontalLayout_7->addWidget(lRang);
 
 
-        verticalLayout->addWidget(frame_3);
+        verticalLayout->addWidget(fInfo);
 
-        frame_2 = new QFrame(centralwidget);
-        frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setMaximumSize(QSize(16777215, 50));
-        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
-        frame_2->setFrameShape(QFrame::StyledPanel);
-        frame_2->setFrameShadow(QFrame::Raised);
-        horizontalLayout_3 = new QHBoxLayout(frame_2);
+        fBoutons = new QFrame(centralwidget);
+        fBoutons->setObjectName(QString::fromUtf8("fBoutons"));
+        fBoutons->setMaximumSize(QSize(16777215, 50));
+        fBoutons->setStyleSheet(QString::fromUtf8("background-color: rgb(210, 210, 210);"));
+        fBoutons->setFrameShape(QFrame::StyledPanel);
+        fBoutons->setFrameShadow(QFrame::Raised);
+        horizontalLayout_3 = new QHBoxLayout(fBoutons);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        pushButton = new QPushButton(frame_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        bPrecedent = new QPushButton(fBoutons);
+        bPrecedent->setObjectName(QString::fromUtf8("bPrecedent"));
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         font.setPointSize(28);
-        pushButton->setFont(font);
+        bPrecedent->setFont(font);
 
-        horizontalLayout_3->addWidget(pushButton);
+        horizontalLayout_3->addWidget(bPrecedent);
 
-        pushButton_2 = new QPushButton(frame_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setFont(font);
+        bSuivant = new QPushButton(fBoutons);
+        bSuivant->setObjectName(QString::fromUtf8("bSuivant"));
+        bSuivant->setFont(font);
 
-        horizontalLayout_3->addWidget(pushButton_2);
+        horizontalLayout_3->addWidget(bSuivant);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer);
 
-        pushButton_3 = new QPushButton(frame_2);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        bLancer = new QPushButton(fBoutons);
+        bLancer->setObjectName(QString::fromUtf8("bLancer"));
 
-        horizontalLayout_3->addWidget(pushButton_3);
+        horizontalLayout_3->addWidget(bLancer);
 
-        pushButton_4 = new QPushButton(frame_2);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        bArreter = new QPushButton(fBoutons);
+        bArreter->setObjectName(QString::fromUtf8("bArreter"));
 
-        horizontalLayout_3->addWidget(pushButton_4);
+        horizontalLayout_3->addWidget(bArreter);
 
 
-        verticalLayout->addWidget(frame_2);
+        verticalLayout->addWidget(fBoutons);
 
 
         horizontalLayout_2->addLayout(verticalLayout);
@@ -241,16 +241,16 @@ public:
         actionEnleverDiaporama->setText(QCoreApplication::translate("MainWindow", "Enlever diaporama", nullptr));
         actionVitesseDeDeplacement->setText(QCoreApplication::translate("MainWindow", "Vitesse de d\303\251placement", nullptr));
         actionAProposDe->setText(QCoreApplication::translate("MainWindow", "A propos de...", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Titre du diaporama", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Image.png", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "Mode de fonctionnement", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Intitul\303\251 de l'image", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Cat\303\251gorie de l'image", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Rang de l'image", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Lancer", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Arr\303\252ter", nullptr));
+        lTitre->setText(QCoreApplication::translate("MainWindow", "Titre du diaporama", nullptr));
+        lImage->setText(QCoreApplication::translate("MainWindow", "Image.png", nullptr));
+        lMode->setText(QCoreApplication::translate("MainWindow", "Mode de fonctionnement", nullptr));
+        lIntitule->setText(QCoreApplication::translate("MainWindow", "Intitul\303\251 de l'image", nullptr));
+        lCategorie->setText(QCoreApplication::translate("MainWindow", "Cat\303\251gorie de l'image", nullptr));
+        lRang->setText(QCoreApplication::translate("MainWindow", "Rang de l'image", nullptr));
+        bPrecedent->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
+        bSuivant->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        bLancer->setText(QCoreApplication::translate("MainWindow", "Lancer", nullptr));
+        bArreter->setText(QCoreApplication::translate("MainWindow", "Arr\303\252ter", nullptr));
         menue->setTitle(QCoreApplication::translate("MainWindow", "Ficher", nullptr));
         menuf->setTitle(QCoreApplication::translate("MainWindow", "Param\303\250tres", nullptr));
         menuAide->setTitle(QCoreApplication::translate("MainWindow", "Aide", nullptr));

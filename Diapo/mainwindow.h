@@ -14,10 +14,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QString s;
 
 public slots:
     void quitter();
-    void changer();
+    void charger();
     void enlever();
     void vitesse();
     void apropos();
