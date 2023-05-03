@@ -14,7 +14,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QString s;
 
 public slots:
     void quitter();
@@ -23,6 +22,7 @@ public slots:
     void vitesse();
     void apropos();
     void precedent();
+    void suivant();
     void lancer();
     void arreter();
 

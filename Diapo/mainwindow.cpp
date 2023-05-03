@@ -8,12 +8,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QObject::connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitter()));
-    QObject::connect(ui->actionChargerDiaporama, SIGNAL(clicked()), this, SLOT(charger()));
-    QObject::connect(ui->actionEnleverDiaporama, SIGNAL(clicked()), this, SLOT(enlever()));
-    QObject::connect(ui->actionVitesseDeDeplacement, SIGNAL(clicked()), this, SLOT(vitesse()));
-    QObject::connect(ui->actionAProposDe, SIGNAL(clicked()), this, SLOT(apropos()));
-    s = "Finito";
-    qDebug() << s;
+    QObject::connect(ui->actionChargerDiaporama, SIGNAL(triggered()), this, SLOT(charger()));
+    QObject::connect(ui->actionEnleverDiaporama, SIGNAL(triggered()), this, SLOT(enlever()));
+    QObject::connect(ui->actionVitesseDeDeplacement, SIGNAL(triggered()), this, SLOT(vitesse()));
+    QObject::connect(ui->actionAProposDe, SIGNAL(triggered()), this, SLOT(apropos()));
+    QObject::connect(ui->bSuivant, SIGNAL(clicked()), this, SLOT(suivant()));
+    QObject::connect(ui->bPrecedent, SIGNAL(clicked()), this, SLOT(precedent()));
+    QObject::connect(ui->bArreter, SIGNAL(clicked()), this, SLOT(arreter()));
+    QObject::connect(ui->bLancer, SIGNAL(clicked()), this, SLOT(lancer()));
 }
 
 MainWindow::~MainWindow()
@@ -23,44 +25,42 @@ MainWindow::~MainWindow()
 
 void MainWindow::quitter()
 {
-    s = "Bouton quitter";
-    qDebug() << s;
+    qDebug() << "Bouton quitter";
 }
 
 void MainWindow::charger()
 {
-    s = "Bouton changer";
-    qDebug() << s;
+    qDebug() << "Bouton changer";
 }
 
 void MainWindow::enlever()
 {
-    s = "Bouton enlever";
-    qDebug() << s;
+    qDebug() << "Bouton enlever";
 }
 
 void MainWindow::vitesse()
 {
-    s = "Bouton vitesse";
-    qDebug() << s;
+    qDebug() << "Bouton vitesse";
 }
 void MainWindow::apropos()
 {
-    s = "Bouton apropos";
-    qDebug() << s;
+    qDebug() << "Bouton apropos";
 }
 void MainWindow::precedent()
 {
-    s = "Bouton precedent";
-    qDebug() << s;
+    qDebug() << "Bouton precedent";;
 }
 void MainWindow::lancer()
 {
-    s = "Bouton lancer";
-    qDebug() << s;
+    qDebug() << "Bouton lancer";
 }
 void MainWindow::arreter()
 {
-    s = "Bouton arreter";
-    qDebug() << s;
+
+    qDebug() << "Bouton arreter";
+}
+
+void MainWindow::suivant()
+{
+    qDebug() << "Bouton suivant";
 }
