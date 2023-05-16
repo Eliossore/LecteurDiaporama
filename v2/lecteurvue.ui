@@ -285,6 +285,9 @@
    <property name="text">
     <string>Quitter</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionChargerDiaporama">
    <property name="text">
@@ -304,6 +307,9 @@
   <action name="actionAProposDe">
    <property name="text">
     <string>A propos de...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
  </widget>
