@@ -10,7 +10,7 @@ LecteurVue::LecteurVue(QWidget *parent)
     QObject::connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitter()));
     QObject::connect(ui->actionChargerDiaporama, SIGNAL(triggered()), this, SLOT(charger()));
     QObject::connect(ui->actionEnleverDiaporama, SIGNAL(triggered()), this, SLOT(enlever()));
-    QObject::connect(ui->actionVitesseDeDeplacement, SIGNAL(triggered()), this, SLOT(vitesse()));
+    QObject::connect(ui->actionVitesseDeDefilement, SIGNAL(triggered()), this, SLOT(vitesse()));
     QObject::connect(ui->actionAProposDe, SIGNAL(triggered()), this, SLOT(apropos()));
     QObject::connect(ui->bSuivant, SIGNAL(clicked()), this, SLOT(suivant()));
     QObject::connect(ui->bPrecedent, SIGNAL(clicked()), this, SLOT(precedent()));
