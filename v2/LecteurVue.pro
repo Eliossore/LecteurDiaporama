@@ -10,13 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     image.cpp \
-    lecteur.cpp \
     lecteurvue.cpp \
     main.cpp
 
 HEADERS += \
     image.h \
-    lecteur.h \
     lecteurvue.h
 
 FORMS += \

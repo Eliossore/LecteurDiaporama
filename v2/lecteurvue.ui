@@ -127,7 +127,7 @@
          <item>
           <widget class="QLabel" name="lMode">
            <property name="text">
-            <string>Mode de fonctionnement</string>
+            <string>Manuelle</string>
            </property>
           </widget>
          </item>
@@ -301,7 +301,7 @@
   </action>
   <action name="actionVitesseDeDeplacement">
    <property name="text">
-    <string>Vitesse de déplacement</string>
+    <string>Vitesse de défilement</string>
    </property>
   </action>
   <action name="actionAProposDe">
