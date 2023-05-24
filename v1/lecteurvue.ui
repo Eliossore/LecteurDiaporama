@@ -268,7 +268,7 @@
     <addaction name="actionChargerDiaporama"/>
     <addaction name="actionEnleverDiaporama"/>
     <addaction name="separator"/>
-    <addaction name="actionVitesseDeDeplacement"/>
+    <addaction name="actionVitesseDeDefilement"/>
    </widget>
    <widget class="QMenu" name="menuAide">
     <property name="title">
@@ -296,9 +296,9 @@
     <string>Enlever diaporama</string>
    </property>
   </action>
-  <action name="actionVitesseDeDeplacement">
+  <action name="actionVitesseDeDefilement">
    <property name="text">
-    <string>Vitesse de déplacement</string>
+    <string>Vitesse de défilement</string>
    </property>
   </action>
   <action name="actionAProposDe">
