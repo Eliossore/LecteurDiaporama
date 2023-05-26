@@ -20,13 +20,14 @@ class LecteurVue : public QMainWindow
 public:
     LecteurVue(QWidget *parent = nullptr);
     ~LecteurVue();
-    void changerDiaporama(unsigned int pNumDiaporama);    // permet de choisir un diaporama, 0 si aucun diaporama souhaité
-    void afficher();            // affiche les informations sur lecteur-diaporama et image courante
-    unsigned int nbImages();    // affiche la taille de _diaporama
-    Image* imageCourante();     // retourne le pointeur vers l'image courante
+    void changerDiaporama(unsigned int pNumDiaporama);    // Permet de choisir un diaporama, 0 si aucun diaporama souhaité
+    void afficher();            // Affiche les informations sur lecteur-diaporama et image courante
+    unsigned int nbImages();    // Affiche la taille de _diaporama
+    Image* imageCourante();     // Retourne le pointeur vers l'image courante
     unsigned int numDiaporamaCourant();
 
 public slots:
+    // Les slots pour les boutons
     void quitter();
     void charger();
     void enlever();
@@ -40,12 +41,12 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    unsigned _numDiaporamaCourant;   // numéro du diaporama courant, par défaut 0
-    Diaporama _diaporama;            // pointeurs vers les images du diaporama
-    unsigned int _posImageCourante;  /* position, dans le diaporama,
+    unsigned _numDiaporamaCourant;   // Numéro du diaporama courant
+    Diaporama _diaporama;            // Pointeur pour la liste d'image
+    unsigned int _posImageCourante;  /* Position, dans le diaporama,
                                         de l'image courante.
                                         Indéfini quand diaporama vide.
-                                        Démarre à 0 quand diaporama non vide */
+                                        Démarre à 0 quand diaporama charger */
     /*-----------------------*/
     void chargerDiaporama();    // charge dans _diaporama les images du _numDiaporamaCourant
     void viderDiaporama();      // vide _diaporama de tous ses objets image et les delete
