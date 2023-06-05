@@ -54,7 +54,7 @@ void LecteurVue::apropos()
 {
     // Crée une MessageBox avec les informations de l'applications lors de ça création
     // On le crée en 'dure' pour éviter de créer une toute nouvelle classe pour juste une seul fênetre
-    QMessageBox::information(this, "À propos...", "Information sur l'application :\n\n - Version de l'application : V2\n - Date de création : 16/05/2023\n - Auteurs : Maxime JACOB-SAUSSEREAU, Esteban BACKES, Eneko ARBELBIDE\n");
+    QMessageBox::information(this, "À propos...", "Information sur l'application :\n\n - Version de l'application : V3\n - Date de création : 16/05/2023\n - Auteurs : Maxime JACOB-SAUSSEREAU, Esteban BACKES, Eneko ARBELBIDE\n");
 }
 void LecteurVue::precedent()
 {
