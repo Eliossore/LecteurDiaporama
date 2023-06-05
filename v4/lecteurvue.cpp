@@ -9,6 +9,7 @@ LecteurVue::LecteurVue(QWidget *parent)
     ui->setupUi(this);
     _temps = new QTimer(this);
     // Connection des boutons et des actions
+    _vite = new boiteDeVitesse(this);
     QObject::connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitter()));
     QObject::connect(ui->actionChargerDiaporama, SIGNAL(triggered()), this, SLOT(charger()));
     QObject::connect(ui->actionEnleverDiaporama, SIGNAL(triggered()), this, SLOT(enlever()));
@@ -19,11 +20,11 @@ LecteurVue::LecteurVue(QWidget *parent)
     QObject::connect(ui->bPrecedent, SIGNAL(clicked()), this, SLOT(precedent()));
     QObject::connect(ui->bArreter, SIGNAL(clicked()), this, SLOT(arreter()));
     QObject::connect(ui->bLancer, SIGNAL(clicked()), this, SLOT(lancer()));
+    ui->bArreter->setDisabled(true);
+    ui->bLancer->setDisabled(true);
+    ui->bSuivant->setDisabled(true);
+    ui->bPrecedent->setDisabled(true);
     _temps->setInterval(2000);
-    // On charge le diaporama par défaut
-    chargerDiaporama();
-    // Et on affiche la première image du diapo
-    afficher();
 }
 
 LecteurVue::~LecteurVue()
@@ -39,21 +40,36 @@ void LecteurVue::quitter()
 
 void LecteurVue::charger()
 {
-
-    qDebug() << "Bouton charger";
+    // On charge le diaporama par défaut
+    chargerDiaporama();
+    // Et on affiche la première image du diapo
+    afficher();
+    ui->bLancer->setDisabled(false);
+    ui->bSuivant->setDisabled(false);
+    ui->bPrecedent->setDisabled(false);
 }
 
 void LecteurVue::enlever()
 {
-    qDebug() << "Bouton enlever";
+    viderDiaporama();
+    _temps->setInterval(2000);
+    ui->lImage->setText("Image.png");
+    ui->lIntitule->setText("Intitulé de l'image");
+    ui->lCategorie->setText("Catégorie de l'image");
+    ui->lRang->setText("Rang de l'image");
+    ui->lTitre->setText("Titre du diaporama");
+    ui->lMode->setText("Manuel");
+    _temps->stop();
+    ui->bArreter->setDisabled(true);
+    ui->bLancer->setDisabled(true);
+    ui->bSuivant->setDisabled(true);
+    ui->bPrecedent->setDisabled(true);
 }
 
 void LecteurVue::vitesse()
 {
-    boiteDeVitesse *vite = new boiteDeVitesse(this);
-    vite->show();
-    qDebug() << vite->getVitesse();
-    _temps->setInterval(vite->getVitesse());
+    _vite->exec();
+    _temps->setInterval(_vite->getVitesse()*1000);
 }
 void LecteurVue::apropos()
 {
@@ -79,7 +95,7 @@ void LecteurVue::lancer()
     // Change la position de l'image dans le diaporama à la première
     (this)->_posImageCourante = 0;
     this->afficher();
-    _temps->start(); // l'intervalle est mis à 2000 ms
+    _temps->start(); // activation de QTimer
     this->ui->lMode->setText("Automatique");
     this->ui->bArreter->setDisabled(false); // Active le bouton arrêter
 }
@@ -139,6 +155,8 @@ void LecteurVue::chargerDiaporama()
     _diaporama.push_back(imageACharger);
     imageACharger = new Image(1, "personne", "Cendrillon", ":/cartesDisney/cartesDisney/Disney_47.gif");
     _diaporama.push_back(imageACharger);
+
+    ui->lTitre->setText("Le diaporama");
 
 
     //  On trie les images dans le diaporama

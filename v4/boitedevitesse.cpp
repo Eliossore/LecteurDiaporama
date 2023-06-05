@@ -18,7 +18,7 @@ boiteDeVitesse::~boiteDeVitesse()
 
 int boiteDeVitesse::getVitesse()
 {
-    return vitesse*1000;
+    return vitesse;
 }
 
 void boiteDeVitesse::confirmer()
@@ -31,5 +31,3 @@ void boiteDeVitesse::annuler()
 {
     this->close();
 }
-
-// J'adore l'eau, dans 20-30 ans y'en aura plus.

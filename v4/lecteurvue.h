@@ -53,6 +53,7 @@ private:
                                         Indéfini quand diaporama vide. */
     QTimer *_temps;
     QDialog *_pageVitesse;
+    boiteDeVitesse *_vite;
 
     /*-----------------------*/
     void chargerDiaporama();    // charge dans _diaporama les images du _numDiaporamaCourant
