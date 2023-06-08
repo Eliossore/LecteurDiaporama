@@ -86,7 +86,7 @@ void LecteurVue::precedent()
     else
     {
         // Change la position de l'image dans le diaporama
-        (this)->_posImageCourante = ((this)->_posImageCourante + 1) % nbImages();
+        (this)->_posImageCourante = ((this)->_posImageCourante - 1) % nbImages();
         this->afficher();
     }
 }
