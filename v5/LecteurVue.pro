@@ -10,12 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     boitedevitesse.cpp \
+    database.cpp \
     image.cpp \
     lecteurvue.cpp \
     main.cpp
 
 HEADERS += \
     boitedevitesse.h \
+    database.h \
     image.h \
     lecteurvue.h
 

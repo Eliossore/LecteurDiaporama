@@ -25,6 +25,7 @@ LecteurVue::LecteurVue(QWidget *parent)
     ui->bSuivant->setDisabled(true);
     ui->bPrecedent->setDisabled(true);
     _temps->setInterval(2000);
+    this->setWindowTitle("Lecteur de diaporamas");
 }
 
 LecteurVue::~LecteurVue()
@@ -155,6 +156,8 @@ void LecteurVue::chargerDiaporama()
     _diaporama.push_back(imageACharger);
     imageACharger = new Image(1, "personne", "Cendrillon", ":/cartesDisney/Disney_47.gif");
     _diaporama.push_back(imageACharger);
+
+
 
     ui->lTitre->setText("Le diaporama");
 
