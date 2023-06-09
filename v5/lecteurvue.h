@@ -8,8 +8,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QSpinBox>
-#include <QSqlDatabase>
-#include <QSqlQuery>
+#include "database.h"
 #include "image.h"
 #include "boitedevitesse.h"
 
@@ -31,6 +30,7 @@ public:
     unsigned int nbImages();    // Affiche la taille de _diaporama
     Image* imageCourante();     // Retourne le pointeur vers l'image courante
     unsigned int numDiaporamaCourant();
+    QString getDbTitreDiapo(int idDiapo);
 
 public slots:
     // Les slots pour les boutons
@@ -56,6 +56,7 @@ private:
     QTimer *_temps;
     QDialog *_pageVitesse;
     boiteDeVitesse *_vite;
+    database *db;
 
     /*-----------------------*/
     void chargerDiaporama();    // charge dans _diaporama les images du _numDiaporamaCourant

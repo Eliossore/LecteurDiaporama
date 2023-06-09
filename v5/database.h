@@ -3,6 +3,7 @@
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QString>
 
 
 #define DATABASE_NAME "S201" // Indique le nom du DSN permettant d'accéder à la BD
@@ -16,9 +17,7 @@ public:
     database();
     bool openDatabase();
     void closeDatabase();
-
-    bool infoDiaporama();
-
+    QString getTitre(int idDiapo);
 
 
 private:

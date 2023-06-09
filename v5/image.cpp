@@ -1,6 +1,6 @@
 #include "image.h"
 
-Image::Image(unsigned int pRang, string pCategorie, string pTitre, string pChemin)
+Image::Image(unsigned int pRang, QString pCategorie, QString pTitre, QString pChemin)
 {
     _rang = pRang;
     _categorie = pCategorie;
@@ -13,23 +13,23 @@ unsigned int Image::getRang()
     return _rang;
 }
 
-string Image::getCategorie()
+QString Image::getCategorie()
 {
     return _categorie;
 }
 
-string Image::getTitre()
+QString Image::getTitre()
 {
     return _titre;
 }
 
-string Image::getChemin()
+QString Image::getChemin()
 {
     return _chemin;
 }
 
 void Image::afficher()
 {
-    cout << "image( rang:" << getRang() << ", titre:" << getTitre() << ", categorie:"
-         << getCategorie() << ", chemin:"<< getChemin() << ")" << endl;
+    qDebug() << "image( rang:" << getRang() << ", titre:" << getTitre() << ", categorie:"
+         << getCategorie() << ", chemin:"<< getChemin() << ")" << Qt::endl;
 }
