@@ -15,7 +15,6 @@ class boiteDeVitesse : public QDialog
 public:
     explicit boiteDeVitesse(QWidget *parent = nullptr);
     ~boiteDeVitesse();
-    int vitesse;
     int getVitesse();
 
 public slots:
@@ -24,6 +23,7 @@ public slots:
 
 private:
     Ui::boiteDeVitesse *ui;
+    int _vitesse;
 };
 
 #endif // BOITEDEVITESSE_H

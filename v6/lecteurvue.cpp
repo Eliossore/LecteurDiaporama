@@ -10,6 +10,7 @@ LecteurVue::LecteurVue(QWidget *parent)
     _temps = new QTimer(this);
     // Connection des boutons et des actions
     _vite = new boiteDeVitesse(this);
+    db = new database();
     QObject::connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitter()));
     QObject::connect(ui->actionChargerDiaporama, SIGNAL(triggered()), this, SLOT(charger()));
     QObject::connect(ui->actionEnleverDiaporama, SIGNAL(triggered()), this, SLOT(enlever()));
@@ -25,6 +26,7 @@ LecteurVue::LecteurVue(QWidget *parent)
     ui->bSuivant->setDisabled(true);
     ui->bPrecedent->setDisabled(true);
     _temps->setInterval(2000);
+    this->setWindowTitle("Lecteur de diaporamas");
 }
 
 LecteurVue::~LecteurVue()
@@ -75,7 +77,7 @@ void LecteurVue::apropos()
 {
     // Crée une MessageBox avec les informations de l'applications lors de ça création
     // On le crée en 'dure' pour éviter de créer une toute nouvelle classe pour juste une seul fênetre
-    QMessageBox::information(this, "À propos...", "Information sur l'application :\n\n - Version de l'application : V6\n - Date de création : 05/06/2023\n - Auteurs : Maxime JACOB-SAUSSEREAU, Esteban BACKES, Eneko ARBELBIDE\n");
+    QMessageBox::information(this, "À propos...", "Information sur l'application :\n\n - Version de l'application : V4\n - Date de création : 05/06/2023\n - Auteurs : Maxime JACOB-SAUSSEREAU, Esteban BACKES, Eneko ARBELBIDE\n");
 }
 void LecteurVue::precedent()
 {
@@ -143,20 +145,30 @@ void LecteurVue::avanceAuto()
     this->afficher();
 }
 
+QString LecteurVue::getDbTitreDiapo(int idDiapo)
+{
+    QSqlQuery query;
+    query.prepare("SELECT `titre Diaporama` FROM Diaporamas WHERE idDiaporama = :idDiapo");
+    query.bindValue(":idDiapo",idDiapo);
+    query.exec();
+    query.next();
+    return query.value(0).toString();
+}
+
 void LecteurVue::chargerDiaporama()
 {
     // On ajoute les images en dur dans le diaporama
+    db->openDatabase();
     Image* imageACharger;
-    imageACharger = new Image(3, "personne", "Mulan", ":/cartesDisney/Disney_24.gif");
-    _diaporama.push_back(imageACharger);
-    imageACharger = new Image(2, "animal", "Dumbo", ":/cartesDisney/Disney_11.gif");
-    _diaporama.push_back(imageACharger);
-    imageACharger = new Image(4, "animal", "Alien", ":/cartesDisney/Disney_42.gif");
-    _diaporama.push_back(imageACharger);
-    imageACharger = new Image(1, "personne", "Cendrillon", ":/cartesDisney/Disney_47.gif");
-    _diaporama.push_back(imageACharger);
+    QSqlQuery query;
+    query.exec("SELECT DD.rang, F.nomFamille, D.titrePhoto, D.uriPhoto FROM DiaposDansDiaporama DD JOIN Diapos D ON DD.idDiapo = D.idPhoto JOIN Familles F ON D.idFam = F.idFamille JOIN Diaporamas DP ON DD.idDiaporama = DP.idDiaporama WHERE DP.idDiaporama = 3 ORDER BY DD.rang ASC");
+    for(int i = 0; query.next(); i++)
+    {
+        imageACharger = new Image(query.value(0).toInt(), query.value(1).toString(), query.value(2).toString(), ":" + query.value(3).toString());
+        _diaporama.push_back(imageACharger);
+    }
 
-    ui->lTitre->setText("Le diaporama");
+    ui->lTitre->setText(getDbTitreDiapo(3));
 
 
     //  On trie les images dans le diaporama
@@ -203,11 +215,11 @@ void LecteurVue::afficher()
     // 2)
     if (nbImages() > 0) {
         imageCourante()->afficher();
-        QPixmap imagePixmap = QPixmap(QString::fromStdString(imageCourante()->getChemin()));
+        QPixmap imagePixmap = QPixmap(imageCourante()->getChemin());
         this->ui->lImage->setPixmap(imagePixmap);
-        this->ui->lCategorie->setText(QString::fromStdString(imageCourante()->getCategorie()));
+        this->ui->lCategorie->setText(imageCourante()->getCategorie());
         this->ui->lRang->setText(QString::number(imageCourante()->getRang()));
-        this->ui->lIntitule->setText(QString::fromStdString(imageCourante()->getTitre()));
+        this->ui->lIntitule->setText(imageCourante()->getTitre());
     }
     else {
         qDebug() << "Diaporama vide" << Qt::endl;
